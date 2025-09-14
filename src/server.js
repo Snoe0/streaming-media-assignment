@@ -9,7 +9,7 @@ const onRequest = (request, response) => {
 
   switch (request.url) {
     case '/':
-      htmlHandler.getIndex(request, response);
+      htmlHandler.getIndex(request, response, 'client.html');
       break;
     case '/party.mp4':
       mediaHandler.getParty(request, response, 'party.mp4', 'video/mp4');
@@ -18,16 +18,16 @@ const onRequest = (request, response) => {
       mediaHandler.getBling(request, response, 'bling.mp3', 'audio/mpeg');
       break;
     case '/page2':
-      mediaHandler.getBling(request, response, 'bling.mp3', 'audio/mpeg');
+      htmlHandler.getIndex(request, response, 'client2.html');
       break;
     case '/bird.mp4':
       mediaHandler.getBird(request, response, 'bird.mp4', 'video/mp4');
       break;
     case '/page3':
-      mediaHandler.getBird(request, response, 'bird.mp4', 'video/mp4');
+      htmlHandler.getIndex(request, response, 'client3.html');
       break;
     default:
-      htmlHandler.getIndex(request, response);
+      htmlHandler.getIndex(request, response, 'client.html');
       break;
   }
 };
